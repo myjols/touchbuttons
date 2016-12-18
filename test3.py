@@ -5,9 +5,9 @@ import logging
 import RPi.GPIO as GPIO
  
 #Setup the GPIOs as outputs - only 4 and 17 are available
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(4, GPIO.OUT)
-GPIO.setup(17, GPIO.OUT)
+#GPIO.setmode(GPIO.BCM)
+#GPIO.setup(4, GPIO.OUT)
+#GPIO.setup(17, GPIO.OUT)
  
 log_format = '%(asctime)-6s: %(name)s - %(levelname)s - %(message)s'
 console_handler = logging.StreamHandler()
@@ -46,13 +46,17 @@ class PiTft(ui.Scene):
         logger.info(btn.text)
          
         if btn.text == '17 on':
-            GPIO.output(17, False)
+             print('17 on')  
+#            GPIO.output(17, False)
         elif btn.text == '4 on':
-            GPIO.output(4, False)
+	     print('4 on')
+#            GPIO.output(4, False)
         elif btn.text == '17 off':
-            GPIO.output(17, True)
+	     print('17 off')
+#            GPIO.output(17, True)
         elif btn.text == '4 off':
-            GPIO.output(4, True)
+	     print('4 off')
+#            GPIO.output(4, True)
  
 ui.init('Raspberry Pi UI', (320, 240))
 pygame.mouse.set_visible(False)
